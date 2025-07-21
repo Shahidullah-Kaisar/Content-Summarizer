@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({
     origin: 'https://content-summarizer-kappa.vercel.app'
 }));
+
 app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);

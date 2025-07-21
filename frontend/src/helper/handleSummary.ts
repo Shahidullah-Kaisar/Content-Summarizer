@@ -1,5 +1,5 @@
-import { extractTextFromPDF } from '../utils/pdfExtactor';
-import { generateText } from './generateText';
+import { extractTextFromPDF } from "../utils/pdfExtactor";
+import { generateText } from "./generateText";
 
 interface HandleSummaryParams {
   textInput: string;
@@ -13,9 +13,7 @@ export const handleSummary = async ({
   selectedFile,
   setIsLoading,
   setSummary,
-
 }: HandleSummaryParams) => {
-
   try {
     setIsLoading(true);
 
@@ -36,14 +34,11 @@ export const handleSummary = async ({
 
     const response = await generateText(prompt);
     setSummary(response);
-
   } catch (error) {
     console.error("Error:", error);
 
     alert("Something went wrong");
-
   } finally {
     setIsLoading(false);
   }
-
 };
